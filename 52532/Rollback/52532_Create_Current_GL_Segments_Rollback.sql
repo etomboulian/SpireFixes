@@ -1,0 +1,1 @@
+truncate gl_segments;
