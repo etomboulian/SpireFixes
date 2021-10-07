@@ -10,7 +10,7 @@ BEGIN
 	for counter in 1..segment_count loop
 	
 		-- Loop through a list of the gl_account records that were archived for that year end
-        for gl_account in (select * from gl_accounts gla order by account_no) loop
+        	for gl_account in (select * from gl_accounts gla order by account_no) loop
 			
 			-- Insert the segment records
 			insert into gl_segments (segment_no, code, description) VALUES (counter, gl_account.account_no, gl_account.name);
