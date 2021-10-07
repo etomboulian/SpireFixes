@@ -14,9 +14,9 @@ BEGIN
 			-- Loop through a list of the gl_history_account records that were archived for that year end
 			for gl_account in (select * from gl_history_accounts glha where glha.year_end = year_end_row.year_end order by account_no) loop
 
-					-- Insert a gl_history_segments row for the data collected thus far
-					insert into gl_history_segments (segment_no, code, description, year_end)
-					VALUES (counter, gl_account.account_no, gl_account.name, gl_account.year_end);
+				-- Insert a gl_history_segments row for the data collected thus far
+				insert into gl_history_segments (segment_no, code, description, year_end)
+				VALUES (counter, gl_account.account_no, gl_account.name, gl_account.year_end);
 
 			end loop;
 			-- Finish loop on gl_accounts
